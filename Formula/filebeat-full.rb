@@ -8,7 +8,7 @@ class FilebeatFull < Formula
   conflicts_with "filebeat-oss"
 
   def install
-    ["ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
+    ["fields.yml", "ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "filebeat"
     (etc/"filebeat").install "filebeat.yml"
 
@@ -17,7 +17,7 @@ class FilebeatFull < Formula
       exec #{libexec}/bin/filebeat \
         --path.config #{etc}/filebeat \
         --path.data #{var}/lib/filebeat \
-        --path.home #{prefix} \
+        --path.home #{libexec} \
         --path.logs #{var}/log/filebeat \
         "$@"
     EOS

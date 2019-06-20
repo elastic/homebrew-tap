@@ -8,7 +8,7 @@ class AuditbeatFull < Formula
   conflicts_with "auditbeat-oss"
 
   def install
-    ["ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
+    ["fields.yml", "ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "auditbeat"
     (etc/"auditbeat").install "auditbeat.yml"
 
@@ -17,7 +17,7 @@ class AuditbeatFull < Formula
       exec #{libexec}/bin/auditbeat \
         --path.config #{etc}/auditbeat \
         --path.data #{var}/lib/auditbeat \
-        --path.home #{prefix} \
+        --path.home #{libexec} \
         --path.logs #{var}/log/auditbeat \
         "$@"
     EOS

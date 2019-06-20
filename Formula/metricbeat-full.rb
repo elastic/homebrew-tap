@@ -8,7 +8,7 @@ class MetricbeatFull < Formula
   conflicts_with "metricbeat-oss"
 
   def install
-    ["ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
+    ["fields.yml", "ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "metricbeat"
     (etc/"metricbeat").install "metricbeat.yml"
 
@@ -17,7 +17,7 @@ class MetricbeatFull < Formula
       exec #{libexec}/bin/metricbeat \
         --path.config #{etc}/metricbeat \
         --path.data #{var}/lib/metricbeat \
-        --path.home #{prefix} \
+        --path.home #{libexec} \
         --path.logs #{var}/log/metricbeat \
         "$@"
     EOS

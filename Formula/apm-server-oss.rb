@@ -8,17 +8,17 @@ class ApmServerOss < Formula
   conflicts_with "apm-server-full"
 
   def install
-    ["ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
+    ["fields.yml", "ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "apm-server"
     (etc/"apm-server").install "apm-server.yml"
 
     (bin/"apm-server").write <<~EOS
       #!/bin/sh
-        exec #{libexec}/bin/apm-server \
-        -path.config #{etc}/apm-server \
-        -path.home #{libexec} \
-        -path.logs #{var}/log/apm-server \
-        -path.data #{var}/lib/apm-server \
+      exec #{libexec}/bin/apm-server \
+        --path.config #{etc}/apm-server \
+        --path.home #{libexec} \
+        --path.logs #{var}/log/apm-server \
+        --path.data #{var}/lib/apm-server \
         "$@"
     EOS
   end
