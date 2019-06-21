@@ -8,9 +8,10 @@ class FilebeatOss < Formula
   conflicts_with "filebeat-full"
 
   def install
-    ["fields.yml", "ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
+    ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "filebeat"
     (etc/"filebeat").install "filebeat.yml"
+    (etc/"filebeat").install "modules.d" if File.exist?("modules.d")
 
     (bin/"filebeat").write <<~EOS
       #!/bin/sh

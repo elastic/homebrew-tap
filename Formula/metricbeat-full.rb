@@ -8,9 +8,10 @@ class MetricbeatFull < Formula
   conflicts_with "metricbeat-oss"
 
   def install
-    ["fields.yml", "ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
+    ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "metricbeat"
     (etc/"metricbeat").install "metricbeat.yml"
+    (etc/"metricbeat").install "modules.d" if File.exist?("modules.d")
 
     (bin/"metricbeat").write <<~EOS
       #!/bin/sh

@@ -8,9 +8,10 @@ class HeartbeatOss < Formula
   conflicts_with "heartbeat-full"
 
   def install
-    ["fields.yml", "ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
+    ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "heartbeat"
     (etc/"heartbeat").install "heartbeat.yml"
+    (etc/"heartbeat").install "modules.d" if File.exist?("modules.d")
 
     (bin/"heartbeat").write <<~EOS
       #!/bin/sh

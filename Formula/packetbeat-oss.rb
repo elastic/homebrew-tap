@@ -8,9 +8,10 @@ class PacketbeatOss < Formula
   conflicts_with "packetbeat-full"
 
   def install
-    ["fields.yml", "ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
+    ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "packetbeat"
     (etc/"packetbeat").install "packetbeat.yml"
+    (etc/"packetbeat").install "modules.d" if File.exist?("modules.d")
 
     (bin/"packetbeat").write <<~EOS
       #!/bin/sh

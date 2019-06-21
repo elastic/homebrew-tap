@@ -8,9 +8,10 @@ class AuditbeatFull < Formula
   conflicts_with "auditbeat-oss"
 
   def install
-    ["fields.yml", "ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
+    ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "auditbeat"
     (etc/"auditbeat").install "auditbeat.yml"
+    (etc/"auditbeat").install "modules.d" if File.exist?("modules.d")
 
     (bin/"auditbeat").write <<~EOS
       #!/bin/sh

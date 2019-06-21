@@ -8,9 +8,10 @@ class ApmServerFull < Formula
   conflicts_with "apm-server-oss"
 
   def install
-    ["fields.yml", "ingest", "kibana"].each { |d| libexec.install d if File.exist?(d) }
+    ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "apm-server"
     (etc/"apm-server").install "apm-server.yml"
+    (etc/"apm-server").install "modules.d" if File.exist?("modules.d")
 
     (bin/"apm-server").write <<~EOS
       #!/bin/sh
