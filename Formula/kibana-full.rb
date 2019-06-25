@@ -21,6 +21,7 @@ class KibanaFull < Formula
       "src",
       "target",
       "webpackShims",
+      "x-pack",
     )
 
     cd prefix do
