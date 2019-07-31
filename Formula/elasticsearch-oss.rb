@@ -102,12 +102,21 @@ class ElasticsearchOss < Formula
     port = server.addr[1]
     server.close
 
+    mkdir testpath/"config"
+    cp etc/"elasticsearch/jvm.options", testpath/"config"
+    cp etc/"elasticsearch/log4j2.properties", testpath/"config"
+
+    ENV["ES_PATH_CONF"] = testpath/"config"
+
     system "#{bin}/elasticsearch-plugin", "list"
+
     pid = testpath/"pid"
     begin
-      system "#{bin}/elasticsearch", "-d", "-p", pid, "-Epath.data=#{testpath}/data", "-Ehttp.port=#{port}"
+      system "#{bin}/elasticsearch", "-d", "-p", pid, "-Epath.data=#{testpath}/data", "-Epath.logs=#{testpath}/logs", "-Enode.name=test-cli", "-Ehttp.port=#{port}"
       sleep 15
       system "curl", "-XGET", "localhost:#{port}/"
+      output = shell_output("curl -s -XGET localhost:#{port}/_cat/nodes")
+      assert_match "test-cli", output
     ensure
       Process.kill(9, pid.read.to_i)
     end
@@ -123,10 +132,6 @@ class ElasticsearchOss < Formula
       http.port: #{port}
     EOS
 
-    cp etc/"elasticsearch/jvm.options", "config"
-    cp etc/"elasticsearch/log4j2.properties", "config"
-
-    ENV["ES_PATH_CONF"] = testpath/"config"
     pid = testpath/"pid"
     begin
       system "#{bin}/elasticsearch", "-d", "-p", pid
