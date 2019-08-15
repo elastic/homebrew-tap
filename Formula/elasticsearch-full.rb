@@ -50,6 +50,7 @@ class ElasticsearchFull < Formula
     ln_s etc/"elasticsearch", libexec/"config"
     (var/"elasticsearch/plugins").mkpath
     ln_s var/"elasticsearch/plugins", libexec/"plugins"
+    ln_s var/"log/elasticsearch", libexec/"logs"
   end
 
   def caveats
