@@ -29,7 +29,6 @@ class KibanaFull < Formula
     end
     bin.env_script_all_files(libexec/"bin", { "KIBANA_PATH_CONF" => etc/"kibana/kibana", "DATA_PATH" => var/"lib/kibana/data" })
 
-
     cd libexec do
       packaged_config = IO.read "config/kibana.yml"
       IO.write "config/kibana.yml", "path.data: #{var}/lib/kibana/data\n" + packaged_config
