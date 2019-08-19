@@ -8,7 +8,7 @@ class KibanaFull < Formula
   conflicts_with "kibana-oss"
 
   def install
-    prefix.install(
+    libexec.install(
       "bin",
       "built_assets",
       "config",
@@ -23,7 +23,13 @@ class KibanaFull < Formula
       "x-pack",
     )
 
-    cd prefix do
+    Pathname.glob(libexec/"bin/*") do |f|
+      next if f.directory?
+      bin.install libexec/"bin"/f
+    end
+    bin.env_script_all_files(libexec/"bin", { "KIBANA_PATH_CONF" => etc/"kibana", "DATA_PATH" => var/"lib/kibana/data" })
+
+    cd libexec do
       packaged_config = IO.read "config/kibana.yml"
       IO.write "config/kibana.yml", "path.data: #{var}/lib/kibana/data\n" + packaged_config
       (etc/"kibana").install Dir["config/*"]
@@ -33,7 +39,7 @@ class KibanaFull < Formula
   end
 
   def post_install
-    ln_s etc/"kibana", prefix/"config"
+    (var/"lib/kibana/data").mkpath
     (prefix/"plugins").mkdir
   end
 
