@@ -26,7 +26,7 @@ class KibanaOss < Formula
       next if f.directory?
       bin.install libexec/"bin"/f
     end
-    bin.env_script_all_files(libexec/"bin", { "KIBANA_PATH_CONF" => etc/"kibana/kibana", "DATA_PATH" => var/"lib/kibana/data" })
+    bin.env_script_all_files(libexec/"bin", { "KIBANA_PATH_CONF" => etc/"kibana", "DATA_PATH" => var/"lib/kibana/data" })
 
     cd libexec do
       packaged_config = IO.read "config/kibana.yml"
