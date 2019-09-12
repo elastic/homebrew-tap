@@ -1,9 +1,9 @@
 class KibanaOss < Formula
   desc "Analytics and search dashboard for Elasticsearch"
   homepage "https://www.elastic.co/products/kibana"
-  url "https://artifacts.elastic.co/downloads/kibana/kibana-oss-7.3.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
-  version "7.3.1"
-  sha256 "757d23eaa702f8e01dc8ab30fd67a7ea939d2c7e416f67f69fdf0a8d45bf9985"
+  url "https://artifacts.elastic.co/downloads/kibana/kibana-oss-7.3.2-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  version "7.3.2"
+  sha256 "4092dd776768ca638b4764e1aed8385de146fbb467d24a6984c023b353090bb7"
   conflicts_with "kibana"
   conflicts_with "kibana-full"
 
