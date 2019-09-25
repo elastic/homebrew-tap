@@ -7,6 +7,8 @@ class KibanaOss < Formula
   conflicts_with "kibana"
   conflicts_with "kibana-full"
 
+  bottle :unneeded
+
   def install
     libexec.install(
       "bin",
