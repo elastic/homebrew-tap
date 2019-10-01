@@ -7,6 +7,8 @@ class AuditbeatOss < Formula
   conflicts_with "auditbeat"
   conflicts_with "auditbeat-full"
 
+  bottle :unneeded
+
   def install
     ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "auditbeat"
