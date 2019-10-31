@@ -43,6 +43,8 @@ class ElasticsearchFull < Formula
       bin.install libexec/"bin"/f
     end
     bin.env_script_all_files(libexec/"bin", {})
+
+    system "codesign", "-f", "-s", "-", "#{libexec}/modules/x-pack-ml/platform/darwin-x86_64/controller.app", "--deep"
   end
 
   def post_install
