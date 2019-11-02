@@ -15,7 +15,7 @@ class ElasticsearchFull < Formula
 
   def install
     # Install everything else into package directory
-    libexec.install "bin", "config", "jdk", "lib", "modules"
+    libexec.install "bin", "config", "jdk.app", "lib", "modules"
 
     inreplace libexec/"bin/elasticsearch-env",
               "if [ -z \"$ES_PATH_CONF\" ]; then ES_PATH_CONF=\"$ES_HOME\"/config; fi",
