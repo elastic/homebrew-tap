@@ -24,6 +24,7 @@ The following products are supported:
   * Metricbeat `brew install elastic/tap/metricbeat-full`
   * Packetbeat `brew install elastic/tap/packetbeat-full`
 * APM server `brew install elastic/tap/apm-server-full`
+* Elastic Cloud Control (ecctl) `brew install elastic/tap/ecctl`
 
 We fully support the OSS distributions too; replace `-full` with `-oss`
 in any of the above commands to install the OSS distribution. Note that
