@@ -1,13 +1,19 @@
 class KibanaOss < Formula
   desc "Analytics and search dashboard for Elasticsearch"
   homepage "https://www.elastic.co/products/kibana"
-  url "https://artifacts.elastic.co/downloads/kibana/kibana-oss-7.6.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  if OS.mac?
+    url "https://artifacts.elastic.co/downloads/kibana/kibana-oss-7.6.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+    sha256 "dde6be4d2e7ad104ab552a8c9de5effd3d613677b16280f471bd7dfb251d0c6b"
+  else
+    url "https://artifacts.elastic.co/downloads/kibana/kibana-oss-7.6.1-linux-x86_64.tar.gz?tap=elastic/homebrew-tap"
+    sha256 "6e810e4ec4b2614379f5d66c82240eb03b4d1d50f595530396c832895b91f0aa"
+  end
   version "7.6.1"
-  sha256 "dde6be4d2e7ad104ab552a8c9de5effd3d613677b16280f471bd7dfb251d0c6b"
-  conflicts_with "kibana"
-  conflicts_with "kibana-full"
 
   bottle :unneeded
+
+  conflicts_with "kibana"
+  conflicts_with "kibana-full"
 
   def install
     libexec.install(
@@ -26,6 +32,7 @@ class KibanaOss < Formula
 
     Pathname.glob(libexec/"bin/*") do |f|
       next if f.directory?
+
       bin.install libexec/"bin"/f
     end
     bin.env_script_all_files(libexec/"bin", { "KIBANA_PATH_CONF" => etc/"kibana", "DATA_PATH" => var/"lib/kibana/data" })

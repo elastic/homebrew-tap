@@ -1,13 +1,19 @@
 class HeartbeatFull < Formula
   desc "Lightweight Shipper for Uptime Monitoring"
   homepage "https://www.elastic.co/products/beats/heartbeat"
-  url "https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-7.6.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  if OS.mac?
+    url "https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-7.6.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+    sha256 "3e062cff6469616fea127f17c8343c3ecd3b0dc9a14711f39f1eeb1fa32efc18"
+  else
+    url "https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-7.6.1-linux-x86_64.tar.gz?tap=elastic/homebrew-tap"
+    sha256 "c39b506ecb177a5ceadc1d5a15e800def68e050373d6174ae30f6ed4950e4298"
+  end
   version "7.6.1"
-  sha256 "3e062cff6469616fea127f17c8343c3ecd3b0dc9a14711f39f1eeb1fa32efc18"
-  conflicts_with "heartbeat"
-  conflicts_with "heartbeat-oss"
 
   bottle :unneeded
+
+  conflicts_with "heartbeat"
+  conflicts_with "heartbeat-oss"
 
   def install
     ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
@@ -69,6 +75,7 @@ class HeartbeatFull < Formula
         codec.format:
           string: '%{[monitor]}'
     EOS
+    chmod "go-w", testpath/"config/heartbeat.yml" unless OS.mac?
     pid = fork do
       exec bin/"heartbeat", "-path.config", testpath/"config", "-path.data",
                             testpath/"data"

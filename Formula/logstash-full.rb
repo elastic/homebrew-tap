@@ -4,11 +4,13 @@ class LogstashFull < Formula
   url "https://artifacts.elastic.co/downloads/logstash/logstash-7.6.1.tar.gz?tap=elastic/homebrew-tap"
   version "7.6.1"
   sha256 "6b16f3158829ad820463c7f3ca4cfec433d12d0eafa25be203c92d12ca91da10"
-  depends_on :java => "1.8"
-  conflicts_with "logstash"
-  conflicts_with "logstash-oss"
 
   bottle :unneeded
+
+  depends_on :java => "1.8"
+
+  conflicts_with "logstash"
+  conflicts_with "logstash-oss"
 
   def install
     inreplace "bin/logstash",

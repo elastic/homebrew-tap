@@ -1,13 +1,19 @@
 class FilebeatOss < Formula
   desc "File harvester to ship log files to Elasticsearch or Logstash"
   homepage "https://www.elastic.co/products/beats/filebeat"
-  url "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-oss-7.6.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  if OS.mac?
+    url "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-oss-7.6.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+    sha256 "65aadeb24166b436492e6f2932b4a27af63c1ad2e858863c44fbfbe30212885f"
+  else
+    url "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-oss-7.6.1-linux-x86_64.tar.gz?tap=elastic/homebrew-tap"
+    sha256 "4bd207f55e8f55744174bddcff5ef5b761345884c62501718c2032471c72d7c3"
+  end
   version "7.6.1"
-  sha256 "65aadeb24166b436492e6f2932b4a27af63c1ad2e858863c44fbfbe30212885f"
-  conflicts_with "filebeat"
-  conflicts_with "filebeat-full"
 
   bottle :unneeded
+
+  conflicts_with "filebeat"
+  conflicts_with "filebeat-full"
 
   def install
     ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
@@ -60,6 +66,7 @@ class FilebeatOss < Formula
         file:
           path: #{testpath}
     EOS
+    chmod "go-w", testpath/"filebeat.yml" unless OS.mac?
 
     (testpath/"log").mkpath
     (testpath/"data").mkpath

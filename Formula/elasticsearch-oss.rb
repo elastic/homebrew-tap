@@ -1,13 +1,19 @@
 class ElasticsearchOss < Formula
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
-  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-7.6.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  if OS.mac?
+    url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-7.6.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+    sha256 "5527e2f17fa3db13f2d51c8854652e271ec1beaca0edfbbc5126283919586663"
+  else
+    url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-7.6.1-linux-x86_64.tar.gz?tap=elastic/homebrew-tap"
+    sha256 "cdc1947d8e5bb8d801791608c75f456c1b1b7ae608b2d0bad041cf015d106423"
+  end
   version "7.6.1"
-  sha256 "5527e2f17fa3db13f2d51c8854652e271ec1beaca0edfbbc5126283919586663"
-  conflicts_with "elasticsearch"
-  conflicts_with "elasticsearch-full"
 
   bottle :unneeded
+
+  conflicts_with "elasticsearch"
+  conflicts_with "elasticsearch-full"
 
   def cluster_name
     "elasticsearch_#{ENV["USER"]}"
@@ -15,7 +21,12 @@ class ElasticsearchOss < Formula
 
   def install
     # Install everything else into package directory
-    libexec.install "bin", "config", "jdk.app", "lib", "modules"
+    libexec.install "bin", "config", "lib", "modules"
+    if OS.mac?
+      libexec.install "jdk.app"
+    else
+      libexec.install "jdk"
+    end
 
     inreplace libexec/"bin/elasticsearch-env",
               "if [ -z \"$ES_PATH_CONF\" ]; then ES_PATH_CONF=\"$ES_HOME\"/config; fi",
