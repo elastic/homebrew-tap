@@ -43,6 +43,8 @@ class ElasticsearchOss < Formula
       bin.install libexec/"bin"/f
     end
     bin.env_script_all_files(libexec/"bin", {})
+
+    system "find", "#{libexec}/jdk.app/Contents/Home/bin", "-type", "f", "-exec", "codesign", "-f", "-s", "-", "{}", ";"
   end
 
   def post_install
