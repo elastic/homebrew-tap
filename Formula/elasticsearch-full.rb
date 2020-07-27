@@ -1,9 +1,9 @@
 class ElasticsearchFull < Formula
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
-  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.8.0-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
-  version "7.8.0"
-  sha256 "840b4f97b5ad2baff98e0bbcd3a6021187d3c529d342f0f0056d0137a523289e"
+  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.8.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  version "7.8.1"
+  sha256 "2c8a00ef38415201db7ec045a7a42c7e6a0092d09feae236ffe3e4d5d0b602de"
   conflicts_with "elasticsearch"
   conflicts_with "elasticsearch-oss"
 
