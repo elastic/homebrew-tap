@@ -69,7 +69,7 @@ class ApmServerOss < Formula
     pid = fork do
       exec bin/"apm-server", "-path.config", testpath/"config", "-path.data", testpath/"data"
     end
-    sleep 1
+    sleep 5
 
     begin
       (testpath/"event").write <<~EOS
@@ -80,7 +80,7 @@ class ApmServerOss < Formula
         {"metricset": {"samples": {"go.memstats.heap.sys.bytes": {"value": 61235}}, "timestamp": 1496170422281000}}
       EOS
       system "curl", "-H", "Content-Type: application/x-ndjson", "-XPOST", "localhost:#{port}/intake/v2/events", "--data-binary", "@#{testpath}/event"
-      sleep 1
+      sleep 5
       s = (testpath/"apm-server/apm-server").read
       assert_match "\"id\":\"abcdef1478523690\"", s
     ensure

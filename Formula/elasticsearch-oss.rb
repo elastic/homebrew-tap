@@ -117,7 +117,7 @@ class ElasticsearchOss < Formula
     pid = testpath/"pid"
     begin
       system "#{bin}/elasticsearch", "-d", "-p", pid, "-Epath.data=#{testpath}/data", "-Epath.logs=#{testpath}/logs", "-Enode.name=test-cli", "-Ehttp.port=#{port}"
-      sleep 15
+      sleep 30
       system "curl", "-XGET", "localhost:#{port}/"
       output = shell_output("curl -s -XGET localhost:#{port}/_cat/nodes")
       assert_match "test-cli", output
@@ -139,7 +139,7 @@ class ElasticsearchOss < Formula
     pid = testpath/"pid"
     begin
       system "#{bin}/elasticsearch", "-d", "-p", pid
-      sleep 10
+      sleep 30
       system "curl", "-XGET", "localhost:#{port}/"
       output = shell_output("curl -s -XGET localhost:#{port}/_cat/nodes")
       assert_match "test-es-path-conf", output

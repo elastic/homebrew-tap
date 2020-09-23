@@ -64,7 +64,7 @@ class AuditbeatFull < Formula
     pid = fork do
       exec "#{bin}/auditbeat", "-path.config", testpath/"config", "-path.data", testpath/"data"
     end
-    sleep 5
+    sleep 20
 
     begin
       touch testpath/"files/touch"
