@@ -12,16 +12,13 @@ class KibanaOss < Formula
   def install
     libexec.install(
       "bin",
-      "built_assets",
       "config",
       "data",
       "node",
       "node_modules",
-      "optimize",
       "package.json",
       "plugins",
       "src",
-      "webpackShims",
     )
 
     Pathname.glob(libexec/"bin/*") do |f|
