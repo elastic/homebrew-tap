@@ -1,9 +1,9 @@
 class LogstashFull < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://artifacts.elastic.co/downloads/logstash/logstash-7.9.3.tar.gz?tap=elastic/homebrew-tap"
-  version "7.9.3"
-  sha256 "60cd7bfcbaac30b1f5e58669fb4a6a6c4533980702529230593ee8f8c24dd501"
+  url "https://artifacts.elastic.co/downloads/logstash/logstash-7.10.0-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  version "7.10.0"
+  sha256 "eecdf4a75a3f138c4a02db05da8719a4051943e2a6909d9e573d0d1161bcd835"
   depends_on :java => "1.8"
   conflicts_with "logstash"
   conflicts_with "logstash-oss"
