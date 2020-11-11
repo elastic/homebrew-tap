@@ -12,16 +12,13 @@ class KibanaFull < Formula
   def install
     libexec.install(
       "bin",
-      "built_assets",
       "config",
       "data",
       "node",
       "node_modules",
-      "optimize",
       "package.json",
       "plugins",
       "src",
-      "webpackShims",
       "x-pack",
     )
 
