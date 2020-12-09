@@ -1,7 +1,7 @@
 class FilebeatFull < Formula
   desc "File harvester to ship log files to Elasticsearch or Logstash"
   homepage "https://www.elastic.co/products/beats/filebeat"
-  url "https://staging.elastic.co/7.10.1-de6b0b5d/downloads/beats/filebeat/filebeat-7.10.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  url "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.10.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
   version "7.10.1"
   sha256 "dc8e2a406493be9adcca773653f0e62daee9a7b746b7148575d89fcdc03ee24d"
   conflicts_with "filebeat"
