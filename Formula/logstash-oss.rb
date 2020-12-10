@@ -4,7 +4,6 @@ class LogstashOss < Formula
   url "https://artifacts.elastic.co/downloads/logstash/logstash-oss-7.10.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
   version "7.10.1"
   sha256 "8e5b8d2557029de9278361a8bb5ef86144a0d2176bb9c586a4170434e7ba15db"
-  depends_on :java => "1.8"
   conflicts_with "logstash"
   conflicts_with "logstash-full"
 
@@ -28,7 +27,8 @@ class LogstashOss < Formula
     (libexec/"config").rmtree
 
     bin.install libexec/"bin/logstash", libexec/"bin/logstash-plugin"
-    bin.env_script_all_files(libexec/"bin", Language::Java.java_home_env("1.8"))
+    bin.env_script_all_files(libexec/"bin", {})
+    system "find", "#{libexec}/jdk.app/Contents/Home/bin", "-type", "f", "-exec", "codesign", "-f", "-s", "-", "{}", ";"
   end
 
   def post_install
