@@ -110,6 +110,7 @@ class ElasticsearchFull < Formula
     mkdir testpath/"config"
     cp etc/"elasticsearch/jvm.options", testpath/"config"
     cp etc/"elasticsearch/log4j2.properties", testpath/"config"
+    touch testpath/"config/elasticsearch.yml"
 
     ENV["ES_PATH_CONF"] = testpath/"config"
 
@@ -130,6 +131,7 @@ class ElasticsearchFull < Formula
     port = server.addr[1]
     server.close
 
+    rm testpath/"config/elasticsearch.yml"
     (testpath/"config/elasticsearch.yml").write <<~EOS
       path.data: #{testpath}/data
       path.logs: #{testpath}/logs
