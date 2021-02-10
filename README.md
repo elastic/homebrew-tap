@@ -26,10 +26,10 @@ The following products are supported:
 * APM server `brew install elastic/tap/apm-server-full`
 * Elastic Cloud Control (ecctl) `brew install elastic/tap/ecctl`
 
-We fully support the OSS distributions too; replace `-full` with `-oss`
-in any of the above commands to install the OSS distribution. Note that
-the default distribution and OSS distribution of a product can not be
-installed at the same time.
+For Logstash, Beats and APM server, we fully support the OSS distributions
+too; replace `-full` with `-oss` in any of the above commands to install the 
+OSS distribution. Note that the default distribution and OSS distribution of
+a product can not be installed at the same time.
 
 ## Documentation
 `brew help`, `man brew` or check [Homebrew's documentation](https://github.com/Homebrew/brew/blob/master/docs/README.md).
