@@ -3,7 +3,7 @@ class FilebeatOss < Formula
   homepage "https://www.elastic.co/products/beats/filebeat"
   url "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-oss-7.11.0-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
   version "7.11.0"
-  sha256 "c0fb25bb24844ed0a2fd37f10b3209edd6889c5c5118be8bcfa23ec02dad8352"
+  sha256 "ed19e384f21d291af2d496e8e3c423eea4beebe65231068e3db966460c82fce9"
   conflicts_with "filebeat"
   conflicts_with "filebeat-full"
 

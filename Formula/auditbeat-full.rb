@@ -3,7 +3,7 @@ class AuditbeatFull < Formula
   homepage "https://www.elastic.co/products/beats/auditbeat"
   url "https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-7.11.0-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
   version "7.11.0"
-  sha256 "d4ba51471a52ac934619e1332bfdb910bb6eecf8b192da4038049dc4431628f2"
+  sha256 "84c50114b0bf9616f8a700bc89e632edc6b35f8d5b0d3308de2335a5bf7f7eb4"
   conflicts_with "auditbeat"
   conflicts_with "auditbeat-oss"
 

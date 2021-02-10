@@ -3,7 +3,7 @@ class ElasticsearchFull < Formula
   homepage "https://www.elastic.co/products/elasticsearch"
   url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.11.0-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
   version "7.11.0"
-  sha256 "9ab59bf562b176ec27371353b28987d12d96e15e2b3ed31dcea2adefef98aafb"
+  sha256 "e34098c0ea81d9a6e5dc0b3162fd6c56e647bdb8cb21d3f2523b219ea4a5341b"
   conflicts_with "elasticsearch"
   conflicts_with "elasticsearch-oss"
 

@@ -3,7 +3,7 @@ class ApmServerFull < Formula
   homepage "https://www.elastic.co/"
   url "https://artifacts.elastic.co/downloads/apm-server/apm-server-7.11.0-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
   version "7.11.0"
-  sha256 "9d86f30b5ff0695e798a79bb01c09b3907d0f5b1288f312958b25e582886a5b6"
+  sha256 "7d4f4c1c5de72cc5b925f7387d205f33402347c1d056cefdc8eb727c4b6d77e9"
   conflicts_with "apm-server"
   conflicts_with "apm-server-oss"
 

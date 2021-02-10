@@ -3,7 +3,7 @@ class MetricbeatOss < Formula
   homepage "https://www.elastic.co/products/beats/metricbeat"
   url "https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-oss-7.11.0-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
   version "7.11.0"
-  sha256 "0f070feec2608325caec1729a6db850c6c09dc79569e39ac8f6558ec522875c0"
+  sha256 "e9b725e6e22c30724760c3dbae1468d6fc14af791cf0c7847e90496b79253776"
   conflicts_with "metricbeat"
   conflicts_with "metricbeat-full"
 
