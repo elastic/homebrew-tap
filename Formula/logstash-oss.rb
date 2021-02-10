@@ -3,7 +3,7 @@ class LogstashOss < Formula
   homepage "https://www.elastic.co/products/logstash"
   url "https://artifacts.elastic.co/downloads/logstash/logstash-oss-7.11.0-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
   version "7.11.0"
-  sha256 "20629fff30beb09c2e6d372044399122cbffb9167f898da88dd78e84b2354260"
+  sha256 "341a7bfa604fc3f97172c1e3a6e3df2c602d8fe392c3bea8b35f8294bf108a34"
   conflicts_with "logstash"
   conflicts_with "logstash-full"
 

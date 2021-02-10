@@ -3,7 +3,7 @@ class KibanaFull < Formula
   homepage "https://www.elastic.co/products/kibana"
   url "https://artifacts.elastic.co/downloads/kibana/kibana-7.11.0-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
   version "7.11.0"
-  sha256 "7d61961938cc4b3af369e251ec8f2cecbff1599a3fae02d457a284ca925a8bc8"
+  sha256 "9804312754e5338a12c01e70b262546b564a7cf96bf0953474148707b63ed22e"
   conflicts_with "kibana"
   conflicts_with "kibana-oss"
 

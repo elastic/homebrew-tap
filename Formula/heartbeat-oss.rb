@@ -3,7 +3,7 @@ class HeartbeatOss < Formula
   homepage "https://www.elastic.co/products/beats/heartbeat"
   url "https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-oss-7.11.0-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
   version "7.11.0"
-  sha256 "3601c4fe2cc7614b31afe9254a51777fbe3596ea06a95e1a3ab82fa744d8766c"
+  sha256 "f21c33ae82ca28e0e9860bfe5897a52df6c4178873d4fd63902eb9ec659c0d4e"
   conflicts_with "heartbeat"
   conflicts_with "heartbeat-full"
 

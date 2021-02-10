@@ -3,7 +3,7 @@ class PacketbeatFull < Formula
   homepage "https://www.elastic.co/products/beats/packetbeat"
   url "https://artifacts.elastic.co/downloads/beats/packetbeat/packetbeat-7.11.0-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
   version "7.11.0"
-  sha256 "a08dbd0c41a3ee6ce642c3a1dc5c9f29bea3de3d61fd17ebc3dddedb2fc607a5"
+  sha256 "f4e1700915375906d70241e695cb06c63bb1546e5eaac5660b1eb768ab82ec52"
   conflicts_with "packetbeat"
   conflicts_with "packetbeat-oss"
 
