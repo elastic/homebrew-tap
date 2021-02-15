@@ -5,7 +5,6 @@ class KibanaFull < Formula
   version "7.11.0"
   sha256 "9804312754e5338a12c01e70b262546b564a7cf96bf0953474148707b63ed22e"
   conflicts_with "kibana"
-  conflicts_with "kibana-oss"
 
   bottle :unneeded
 
