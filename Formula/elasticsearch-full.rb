@@ -5,7 +5,6 @@ class ElasticsearchFull < Formula
   version "7.11.0"
   sha256 "e34098c0ea81d9a6e5dc0b3162fd6c56e647bdb8cb21d3f2523b219ea4a5341b"
   conflicts_with "elasticsearch"
-  conflicts_with "elasticsearch-oss"
 
   bottle :unneeded
 
