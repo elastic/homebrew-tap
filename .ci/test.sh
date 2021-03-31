@@ -23,7 +23,6 @@ brew_test() {
   log "Installing '${FORMULA_FILE}'."
   brew install --formula "$FORMULA_FILE"
 
-  TEST_FAILURE=""
   log "Testing '${FORMULA_FILE}'."
 
   if brew test "$FORMULA_FILE"

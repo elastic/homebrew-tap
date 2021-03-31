@@ -4,6 +4,19 @@ These scripts help with updating and testing the homebrew-tap formulas.
 
 # Usage
 
+The entrypoint for ci `release.sh`:
+
+```bash
+.ci/release.sh "$DOWNLOAD_BASE" "$VERSION"
+```
+
+This invokes the update, test, release preparation, and patch file creation for
+integration with the release process.
+
+# Individual scripts
+
+## Updating
+
 ```bash
 BUILD_ID=1.2.3-example
 VERSION=1.2.3
@@ -17,7 +30,7 @@ artifacts will need to be downloaded to the local machine.
 
 Once that is complete, changes can be inspected in the local repository.
 
-# Testing
+## Testing
 
 To run the homebrew automated tests, use the following script:
 
@@ -27,7 +40,7 @@ To run the homebrew automated tests, use the following script:
 
 This will not make any changes to the repository.
 
-# Preparing for a Release
+## Preparing for a Release
 
 Once a final build candidate is ready and has gone through the `update.sh` and
 `test.sh` scripts, update to the final production URLs with:
