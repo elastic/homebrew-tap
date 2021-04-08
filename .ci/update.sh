@@ -28,7 +28,15 @@ update() {
     "$FORMULA_FILE"
 
   log "Installing '${FORMULA_FILE}'."
-  BREW_INSTALL_OUTPUT=$(brew install --formula "$FORMULA_FILE" 2>&1)
+  if BREW_INSTALL_OUTPUT=$(brew install --formula "$FORMULA_FILE" 2>&1)
+  then
+    echo "$BREW_INSTALL_OUTPUT"
+    log "Install successful."
+  else
+    echo "$BREW_INSTALL_OUTPUT"
+    log "The install was unsuccessful, aborting."
+    exit 1
+  fi
 
   log "Picking up the reported new sha256."
   NEW_SHA256=$(echo "$BREW_INSTALL_OUTPUT" | awk '/sha256 / { gsub("\"","");print $2 }')
@@ -46,6 +54,8 @@ update() {
 
   brew uninstall --formula "$FORMULA_FILE"
 }
+
+log "Using brew: '$(which brew)'."
 
 update "./Formula/apm-server-full.rb" "apm-server/apm-server-$VERSION-darwin-x86_64.tar.gz"
 update "./Formula/apm-server-oss.rb" "apm-server/apm-server-oss-$VERSION-darwin-x86_64.tar.gz"
