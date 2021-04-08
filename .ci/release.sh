@@ -19,6 +19,6 @@ git checkout -b "update-$VERSION"
 git add Formula
 git commit -m "Update to $VERSION" -m "Updated by homebrew-tap automation."
 mkdir -p .ci/output
-git format-patch -1 --output=".ci/output/update.patch"
+git format-patch -1 --output=".ci/output/update-$VERSION.patch"
 git checkout -
 
