@@ -47,6 +47,8 @@ update() {
   brew uninstall --formula "$FORMULA_FILE"
 }
 
+log "Using brew: '$(which brew)'."
+
 update "./Formula/apm-server-full.rb" "apm-server/apm-server-$VERSION-darwin-x86_64.tar.gz"
 update "./Formula/apm-server-oss.rb" "apm-server/apm-server-oss-$VERSION-darwin-x86_64.tar.gz"
 update "./Formula/auditbeat-full.rb" "beats/auditbeat/auditbeat-$VERSION-darwin-x86_64.tar.gz"

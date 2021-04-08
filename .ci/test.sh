@@ -36,6 +36,8 @@ brew_test() {
   brew uninstall --formula "$FORMULA_FILE"
 }
 
+log "Using brew: '$(which brew)'."
+
 brew_test "./Formula/apm-server-full.rb"
 brew_test "./Formula/apm-server-oss.rb"
 brew_test "./Formula/auditbeat-full.rb"
