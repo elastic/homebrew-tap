@@ -6,11 +6,13 @@ DOWNLOAD_BASE="$1"
 VERSION="$2"
 
 install_homebrew() {
-  # do an alternative install of homebrew to ensure we have access
-  # to perform brew operations
+  # do an alternative install of homebrew to ensure we have access to
+  # perform brew operations
   # https://docs.brew.sh/Installation#untar-anywhere
-  git clone https://github.com/Homebrew/brew.git ./.ci/build/brew
-  export "PATH=$PWD/.ci/build/brew/bin:$PATH"
+  # note that homebrew needs to be installed somewhere with a shortish
+  # path to avoid relinking dynamic libraries for bundled JDKs
+  git clone https://github.com/Homebrew/brew.git $HOME/brew
+  eval $($HOME/brew/bin/brew shellenv)
 }
 
 # create the directory we'll be doing some work in
