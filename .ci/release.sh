@@ -23,6 +23,7 @@ install_homebrew() {
   # override the default temp directory, by default homebrew does not
   # allow an install in /tmp otherwise
   export HOMEBREW_TEMP=/tmp/homebrew-temp
+  rm -rf "$HOMEBREW_TEMP"
 }
 
 install_homebrew
