@@ -5,6 +5,10 @@ set -eou pipefail
 DOWNLOAD_BASE="$1"
 VERSION="$2"
 
+remove_homebrew() {
+  rm -rf "/tmp/b"
+}
+
 install_homebrew() {
   # do an alternative install of homebrew to ensure we have access to
   # perform brew operations
@@ -12,17 +16,13 @@ install_homebrew() {
   # note that homebrew needs to be installed somewhere with a shortish
   # path to avoid issues relinking dynamic libraries
   # https://github.com/Homebrew/brew/issues/4979
-  rm -rf "/tmp/b"
+  remove_homebrew
   git clone https://github.com/Homebrew/brew.git "/tmp/b"
   #shellcheck disable=SC2046
   eval $("/tmp/b/bin/brew" shellenv)
   # override the default temp directory, by default homebrew does not
   # allow an install in /tmp otherwise
   export HOMEBREW_TEMP=/tmp/homebrew-temp
-}
-
-remove_homebrew() {
-  rm -rf "/tmp/b"
 }
 
 install_homebrew
