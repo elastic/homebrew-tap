@@ -12,8 +12,8 @@ VERSION="$2"
 # https://github.com/Homebrew/brew/issues/4979
 HOMEBREW_INSTALL_PATH="/tmp/b"
 
-# this environment variable is used by homebrew, the default is override
-# otherwise homebrew does not allow an install in /tmp otherwise
+# this environment variable is used by homebrew, the default is overridden
+# otherwise homebrew does not allow an install in /tmp
 export HOMEBREW_TEMP="/tmp/homebrew-temp"
 
 remove_homebrew() {
