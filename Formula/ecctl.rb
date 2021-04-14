@@ -6,10 +6,10 @@ class Ecctl < Formula
 
   if OS.mac?
     url "https://download.elastic.co/downloads/ecctl/1.3.1/ecctl_1.3.1_darwin_amd64.tar.gz", :using => CurlDownloadStrategy
-    sha256 "9dcab70d77605c573ae75cfdbc96b8bf3d803da99d50ba60b1554ff509cca019"
+    sha256 "df5567318326dcf5199a3f282e79cfd4282df2b2b5e10a7df225df9922965ce4"
   elsif OS.linux?
     url "https://download.elastic.co/downloads/ecctl/1.3.1/ecctl_1.3.1_linux_amd64.tar.gz", :using => CurlDownloadStrategy
-    sha256 "5cadd6616d59140efb6674cd82db4e096f262e9f6d8ca9468f70c2d428e13813"
+    sha256 "d198f79380af6da302e45909327fd39eabc1f0bc6032ac81b79972ebbb5460cd"
   end
 
   def install
