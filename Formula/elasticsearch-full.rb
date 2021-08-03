@@ -1,9 +1,9 @@
 class ElasticsearchFull < Formula
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
-  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.13.4-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
-  version "7.13.4"
-  sha256 "1abc466f9eda79f022cfd098ae89809008c149fb71a4bd11641cb324de1138cc"
+  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.14.0-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  version "7.14.0"
+  sha256 "a7ecf5980fe37a29eaccbfced80cd93e72e0c6b20b7870c4fcbae99965ef6f86"
   conflicts_with "elasticsearch"
 
   bottle :unneeded
