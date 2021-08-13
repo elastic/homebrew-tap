@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-TEST_FAILURE=""
+FAILED_TESTS=""
 
 log() {
   # the output from homebrew commands can be a bit much, space out our logs with some newlines
@@ -30,7 +30,8 @@ brew_test() {
     log "The tests were successful."
   else
     log "The tests for '${FORMULA_FILE}' failed, try running 'brew test ${FORMULA_FILE} --debug --verbose' for more information."
-    TEST_FAILURE="true"
+    # append the failed formula with a newline
+    FAILED_TESTS="${FAILED_TESTS}${FORMULA_FILE}"$'\n'
   fi
 
   brew uninstall --formula "$FORMULA_FILE"
@@ -55,8 +56,9 @@ brew_test "./Formula/metricbeat-oss.rb"
 brew_test "./Formula/packetbeat-full.rb"
 brew_test "./Formula/packetbeat-oss.rb"
 
-if [[ $TEST_FAILURE == "true" ]]
+if [[ $FAILED_TESTS != "" ]]
 then
-  echo 'Some tests failed, exiting with error.'
+  echo 'The following tests failed, look in the log for details, exiting with error.'
+  echo "$FAILED_TESTS"
   exit 1
 fi
