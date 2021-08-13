@@ -10,7 +10,7 @@ The entrypoint for ci `release.sh`:
 .ci/release.sh "$DOWNLOAD_BASE" "$VERSION"
 ```
 
-This invokes the update, test, release preparation, and patch file creation for
+This invokes the update, release preparation, and patch file creation for
 integration with the release process.
 
 # Individual scripts
@@ -35,7 +35,12 @@ Once that is complete, changes can be inspected in the local repository.
 To run the homebrew automated tests, use the following script:
 
 ```bash
-.ci/test.sh
+.ci/test.sh "$DOWNLOAD_BASE" "$VERSION"
+```
+
+For example to run the tests for the `8.0.0-SNAPSHOT` version:
+```bash
+.ci/test.sh "https://snapshots.elastic.co/downloads" "8.0.0-SNAPSHOT"
 ```
 
 This will not make any changes to the repository.
