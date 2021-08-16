@@ -5,7 +5,7 @@ set -eou pipefail
 DOWNLOAD_BASE="$1"
 VERSION="$2"
 
-.ci/prepare-homebrew-env.sh
+source .ci/prepare-homebrew-env.sh
 
 # update to the new artifacts
 env DOWNLOAD_BASE="$DOWNLOAD_BASE" .ci/update.sh "$VERSION"
