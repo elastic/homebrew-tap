@@ -140,7 +140,7 @@ class ElasticsearchFull < Formula
 
     pid = testpath/"pid"
     begin
-      system "#{bin}/elasticsearch", "-d", "-p", pid
+      system "#{bin}/elasticsearch", "-d", "-p", pid, "-Expack.security.enabled=false"
       sleep 30
       system "curl", "-XGET", "localhost:#{port}/"
       output = shell_output("curl -s -XGET localhost:#{port}/_cat/nodes")
