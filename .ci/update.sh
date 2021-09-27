@@ -58,7 +58,12 @@ update() {
 log "Using brew: '$(which brew)'."
 
 update "./Formula/apm-server-full.rb" "apm-server/apm-server-$VERSION-darwin-x86_64.tar.gz"
-update "./Formula/apm-server-oss.rb" "apm-server/apm-server-oss-$VERSION-darwin-x86_64.tar.gz"
+
+if [[ $VERSION =~ ^7\.* ]]
+then
+  update "./Formula/apm-server-oss.rb" "apm-server/apm-server-oss-$VERSION-darwin-x86_64.tar.gz"
+fi
+
 update "./Formula/auditbeat-full.rb" "beats/auditbeat/auditbeat-$VERSION-darwin-x86_64.tar.gz"
 update "./Formula/auditbeat-oss.rb" "beats/auditbeat/auditbeat-oss-$VERSION-darwin-x86_64.tar.gz"
 update "./Formula/elasticsearch-full.rb" "elasticsearch/elasticsearch-$VERSION-darwin-x86_64.tar.gz"

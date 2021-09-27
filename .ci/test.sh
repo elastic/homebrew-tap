@@ -48,7 +48,12 @@ brew_test() {
 log "Using brew: '$(which brew)'."
 
 brew_test "./Formula/apm-server-full.rb"
-brew_test "./Formula/apm-server-oss.rb"
+
+if [[ $VERSION =~ ^7\.* ]]
+then
+  brew_test "./Formula/apm-server-oss.rb"
+fi
+
 brew_test "./Formula/auditbeat-full.rb"
 brew_test "./Formula/auditbeat-oss.rb"
 brew_test "./Formula/elasticsearch-full.rb"
