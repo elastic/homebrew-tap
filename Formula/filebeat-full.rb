@@ -7,8 +7,6 @@ class FilebeatFull < Formula
   conflicts_with "filebeat"
   conflicts_with "filebeat-oss"
 
-  bottle :unneeded
-
   def install
     ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "filebeat"

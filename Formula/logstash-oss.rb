@@ -7,8 +7,6 @@ class LogstashOss < Formula
   conflicts_with "logstash"
   conflicts_with "logstash-full"
 
-  bottle :unneeded
-
   def install
     inreplace "bin/logstash",
               %r{^\. "\$\(cd `dirname \${SOURCEPATH}`\/\.\.; pwd\)\/bin\/logstash\.lib\.sh\"},
