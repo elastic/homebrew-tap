@@ -7,8 +7,6 @@ class ApmServerOss < Formula
   conflicts_with "apm-server"
   conflicts_with "apm-server-full"
 
-  bottle :unneeded
-
   def install
     ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "apm-server"

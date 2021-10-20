@@ -7,8 +7,6 @@ class PacketbeatFull < Formula
   conflicts_with "packetbeat"
   conflicts_with "packetbeat-oss"
 
-  bottle :unneeded
-
   def install
     ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "packetbeat"

@@ -7,8 +7,6 @@ class MetricbeatFull < Formula
   conflicts_with "metricbeat"
   conflicts_with "metricbeat-oss"
 
-  bottle :unneeded
-
   def install
     ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "metricbeat"

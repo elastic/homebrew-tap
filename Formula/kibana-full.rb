@@ -6,8 +6,6 @@ class KibanaFull < Formula
   sha256 "7028495cafc4c3454d933b3bd938bfc3b7ee9042323df6013d7233306feac3ef"
   conflicts_with "kibana"
 
-  bottle :unneeded
-
   def install
     libexec.install(
       "bin",
