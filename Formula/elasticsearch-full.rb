@@ -6,8 +6,6 @@ class ElasticsearchFull < Formula
   sha256 "ad093b4fe6773363fbc9c17d32a89222e536899b2a41c8dcc47b82a9c1459b6c"
   conflicts_with "elasticsearch"
 
-  bottle :unneeded
-
   def cluster_name
     "elasticsearch_#{ENV["USER"]}"
   end

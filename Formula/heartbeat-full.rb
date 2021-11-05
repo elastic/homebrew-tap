@@ -7,8 +7,6 @@ class HeartbeatFull < Formula
   conflicts_with "heartbeat"
   conflicts_with "heartbeat-oss"
 
-  bottle :unneeded
-
   def install
     ["fields.yml", "ingest", "kibana", "module"].each { |d| libexec.install d if File.exist?(d) }
     (libexec/"bin").install "heartbeat"
