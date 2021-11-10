@@ -1,9 +1,9 @@
 class AuditbeatFull < Formula
   desc "Lightweight Shipper for Audit Data"
   homepage "https://www.elastic.co/products/beats/auditbeat"
-  url "https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-7.15.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
-  version "7.15.1"
-  sha256 "8d847b076e319bba36ec17d084d898234eddbbf65d44351afbd2f5099996f68d"
+  url "https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-7.15.2-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  version "7.15.2"
+  sha256 "238022cb1a9e8af8353bf2e8865c76d9b871628641f82bd92e245b8513141514"
   conflicts_with "auditbeat"
   conflicts_with "auditbeat-oss"
 
