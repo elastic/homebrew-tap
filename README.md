@@ -63,7 +63,7 @@ You should have the following output:
 ### Calling bottle :unneeded is deprecated!
 
 When I execute `brew update`, the following warning appears
-  ```
-  Warning: Calling bottle :unneeded is deprecated! There is no replacement.
-  ```
-  This is related to your configuration not being up-to-date. Your are still using the legacy `master` branch which is not updated anymore. Please [follow the instructions to update](#how-do-i-ensure-my-configuration-is-up-to-date) your local configuration to use the `main` branch.
+
+    Warning: Calling bottle :unneeded is deprecated! There is no replacement.
+
+This is related to your configuration not being up-to-date. Your are still using the legacy `master` branch which is not updated anymore. Please [follow the instructions to update](#how-do-i-ensure-my-configuration-is-up-to-date) your local configuration to use the `main` branch.
