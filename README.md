@@ -44,7 +44,7 @@ a product can not be installed at the same time.
 
 Run the following command to update your configuration:
 
-    brew tap --repair
+    brew tap --repair elastic/tap
     brew update -v
 
 Verify your configuration is based on the `main` branch with:
