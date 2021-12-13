@@ -1,9 +1,9 @@
 class ElasticsearchFull < Formula
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
-  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.16.0-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
-  version "7.16.0"
-  sha256 "8d07880039aa77df9555cc847a97c364eb84ae75f4f603428ed5b2cdea82b7c0"
+  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.16.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  version "7.16.1"
+  sha256 "da5d346d4b4114ee6c141b8d603a295b1b3e2e9dce56cf1e3701ad4bf0be0716"
   conflicts_with "elasticsearch"
 
   def cluster_name
