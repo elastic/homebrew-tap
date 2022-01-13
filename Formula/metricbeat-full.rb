@@ -1,9 +1,9 @@
 class MetricbeatFull < Formula
   desc "Collect metrics from your systems and services"
   homepage "https://www.elastic.co/products/beats/metricbeat"
-  url "https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.16.2-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
-  version "7.16.2"
-  sha256 "7e06f908f0cd751a70c2e868fe12c0baecaac10c223e39fafd1f322f6789e2cc"
+  url "https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.16.3-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  version "7.16.3"
+  sha256 "acc3529b6c312970fc56555c80cd1e932d6511962798301ef6706975d1fc5817"
   conflicts_with "metricbeat"
   conflicts_with "metricbeat-oss"
 
