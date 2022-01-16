@@ -1,14 +1,17 @@
 class ElasticsearchFull < Formula
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
+
+  sha256_aarch64 = "5829ead77ca856a1fd21bc2269dd7b0afe3daa820cfde2d17939fe40fe71c4cb"
+  sha256_x86_64 = "213faf4db506c9781d322370ffa6d55e446788694ca41ed141138fa5dcbc4064"
   if Hardware::CPU.arm?
     url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.16.3-darwin-aarch64.tar.gz?tap=elastic/homebrew-tap"
     version "7.16.3"
-    sha256 "5829ead77ca856a1fd21bc2269dd7b0afe3daa820cfde2d17939fe40fe71c4cb"
+    sha256 sha256_aarch64
   else
     url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.16.3-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
     version "7.16.3"
-    sha256 "213faf4db506c9781d322370ffa6d55e446788694ca41ed141138fa5dcbc4064"
+    sha256 sha256_x86_64
   end
   conflicts_with "elasticsearch"
 
