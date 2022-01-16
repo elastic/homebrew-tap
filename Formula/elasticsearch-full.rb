@@ -1,9 +1,15 @@
 class ElasticsearchFull < Formula
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
-  url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.16.3-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
-  version "7.16.3"
-  sha256 "213faf4db506c9781d322370ffa6d55e446788694ca41ed141138fa5dcbc4064"
+  if Hardware::CPU.arm?
+    url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.16.3-darwin-aarch64.tar.gz?tap=elastic/homebrew-tap"
+    version "7.16.3"
+    sha256 "5829ead77ca856a1fd21bc2269dd7b0afe3daa820cfde2d17939fe40fe71c4cb"
+  else
+    url "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.16.3-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+    version "7.16.3"
+    sha256 "213faf4db506c9781d322370ffa6d55e446788694ca41ed141138fa5dcbc4064"
+  end
   conflicts_with "elasticsearch"
 
   def cluster_name
@@ -41,7 +47,11 @@ class ElasticsearchFull < Formula
     end
     bin.env_script_all_files(libexec/"bin", {})
 
-    system "codesign", "-f", "-s", "-", "#{libexec}/modules/x-pack-ml/platform/darwin-x86_64/controller.app", "--deep"
+    if Hardware::CPU.arm?
+      system "codesign", "-f", "-s", "-", "#{libexec}/modules/x-pack-ml/platform/darwin-aarch64/controller.app", "--deep"
+    else
+      system "codesign", "-f", "-s", "-", "#{libexec}/modules/x-pack-ml/platform/darwin-x86_64/controller.app", "--deep"
+    end
     system "find", "#{libexec}/jdk.app/Contents/Home/bin", "-type", "f", "-exec", "codesign", "-f", "-s", "-", "{}", ";"
   end
 
