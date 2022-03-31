@@ -1,9 +1,9 @@
 class PacketbeatFull < Formula
   desc "Lightweight Shipper for Network Data"
   homepage "https://www.elastic.co/products/beats/packetbeat"
-  url "https://artifacts.elastic.co/downloads/beats/packetbeat/packetbeat-7.17.1-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
-  version "7.17.1"
-  sha256 "f8dc82cd7ff26adfe2793a9086de470cc466b1beb75a8c0894a55f01927300d3"
+  url "https://artifacts.elastic.co/downloads/beats/packetbeat/packetbeat-7.17.2-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  version "7.17.2"
+  sha256 "8cba768bac8e1470ecdc9dcf1510a95225f97efaee1777692315947b7444e59c"
   conflicts_with "packetbeat"
   conflicts_with "packetbeat-oss"
 
