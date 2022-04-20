@@ -1,9 +1,9 @@
 class ApmServerFull < Formula
   desc "Server for shipping APM metrics to Elasticsearch"
   homepage "https://www.elastic.co/"
-  url "https://artifacts.elastic.co/downloads/apm-server/apm-server-7.17.2-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
-  version "7.17.2"
-  sha256 "d6479c5ceec7bdb86209ff0c6496918b98d6edbf2736083f6cfb174eea78fa27"
+  url "https://artifacts.elastic.co/downloads/apm-server/apm-server-7.17.3-darwin-x86_64.tar.gz?tap=elastic/homebrew-tap"
+  version "7.17.3"
+  sha256 "1caab8f35f9ca1edea07938a225205c4a9aa599c75a60ebe4ef91afc1b8eeab3"
   conflicts_with "apm-server"
   conflicts_with "apm-server-oss"
 
