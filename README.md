@@ -6,7 +6,7 @@ This tap is for products in the Elastic stack.
 
 Since October 2021, the default branch is renamed from `master` to `main`.
 
-The `master` branch is no longer updated and will be **deleted on December 1st, 2021**.
+The `master` branch is no longer updated and will be **deleted on June 1st, 2022**.
 
 Please [follow the instructions to update](#how-do-i-ensure-my-configuration-is-up-to-date) your configuration.
 
@@ -44,12 +44,12 @@ a product can not be installed at the same time.
 
 Run the following command to update your configuration:
 
-    brew tap --repair elastic/tap
-    brew update -v
+    brew untap elastic/tap --force
+    brew tap elastic/tap
 
 Verify your configuration is based on the `main` branch with:
 
-    git -C /opt/homebrew/Library/Taps/elastic/homebrew-tap status
+    git -C /usr/local/homebrew/Library/Taps/elastic/homebrew-tap status
 
 You should have the following output:
 
