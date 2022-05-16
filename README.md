@@ -40,7 +40,7 @@ too; replace `-full` with `-oss` in any of the above commands to install the
 OSS distribution. Note that the default distribution and OSS distribution of
 a product can not be installed at the same time.
 
-## How do I ensure my configuration is up to date?
+## How do I ensure my configuration is still up to date after the branch renaming?
 
 Run the following command to update your configuration:
 
