@@ -47,7 +47,7 @@ class KibanaFull < Formula
   EOS
   end
 
-  plist_options :manual => "kibana"
+  service.require_root :manual => "kibana"
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>
