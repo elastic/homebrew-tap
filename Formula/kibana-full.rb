@@ -47,23 +47,11 @@ class KibanaFull < Formula
   EOS
   end
 
-  service.require_root :manual => "kibana"
-
-  def plist; <<~EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
-    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>Program</key>
-        <string>#{opt_bin}/kibana</string>
-        <key>RunAtLoad</key>
-        <true/>
-      </dict>
-    </plist>
-  EOS
+  service do
+    run [opt_bin/"kibana"]
+    working_dir var
+    log_path var/"log/kibana.log"
+    error_log_path var/"log/kibana.log"
   end
 
   test do
