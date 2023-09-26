@@ -29,7 +29,7 @@ class AuditbeatFull < Formula
     (var/"log/auditbeat").mkpath
   end
 
-  plist_options :manual => "auditbeat"
+  @plist_manual = "auditbeat"
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>

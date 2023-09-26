@@ -29,7 +29,7 @@ class HeartbeatFull < Formula
     (var/"log/heartbeat").mkpath
   end
 
-  plist_options :manual => "heartbeat"
+  @plist_manual = "heartbeat"
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>

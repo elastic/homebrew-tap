@@ -29,7 +29,7 @@ class ApmServerFull < Formula
     (var/"log/apm-server").mkpath
   end
 
-  plist_options :manual => "apm-server"
+  @plist_manual = "apm-server"
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>

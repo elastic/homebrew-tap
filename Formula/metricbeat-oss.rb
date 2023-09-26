@@ -24,7 +24,7 @@ class MetricbeatOss < Formula
     EOS
   end
 
-  plist_options :manual => "metricbeat"
+  @plist_manual = "metricbeat"
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>

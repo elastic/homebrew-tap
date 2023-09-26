@@ -24,7 +24,7 @@ class FilebeatFull < Formula
     EOS
   end
 
-  plist_options :manual => "filebeat"
+  @plist_manual = "filebeat"
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>
