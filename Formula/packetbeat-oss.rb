@@ -24,7 +24,7 @@ class PacketbeatOss < Formula
     EOS
   end
 
-  plist_options :manual => "packetbeat"
+  @plist_manual = "packetbeat"
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>

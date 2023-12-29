@@ -40,7 +40,7 @@ class LogstashFull < Formula
   EOS
   end
 
-  plist_options :manual => "logstash"
+  @plist_manual = "logstash"
 
   def plist
     <<~EOS
