@@ -6,7 +6,7 @@ This tap is for products in the Elastic stack.
 
 Since October 2021, the default branch is renamed from `master` to `main`.
 
-The `master` branch is no longer updated and will be **deleted on June 1st, 2022**.
+The `master` branch is no longer updated and will be **deleted on June 1st, 2023**.
 
 Please [follow the instructions to update](#how-do-i-ensure-my-configuration-is-up-to-date) your configuration.
 
