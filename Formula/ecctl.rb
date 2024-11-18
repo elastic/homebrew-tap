@@ -2,14 +2,14 @@
 class Ecctl < Formula
   desc "Elastic Cloud Control, the official Elastic Cloud and ECE command line interface"
   homepage "https://github.com/elastic/ecctl"
-  version "1.14.0"
+  version "1.14.1"
 
   if OS.mac?
-    url "https://download.elastic.co/downloads/ecctl/1.14.0/ecctl_1.14.0_darwin_amd64.tar.gz", :using => CurlDownloadStrategy
-    sha256 "749087e82a3927b8432f1257b248b85236d9f147775d3c66dbe4d5b7e6748690"
+    url "https://download.elastic.co/downloads/ecctl/1.14.1/ecctl_1.14.1_darwin_amd64.tar.gz", :using => CurlDownloadStrategy
+    sha256 "bb97f851e80e9d4702669f2369aac5a7efc10a76f291f8b68f2d967f0cdcbb75"
   elsif OS.linux?
-    url "https://download.elastic.co/downloads/ecctl/1.14.0/ecctl_1.14.0_linux_amd64.tar.gz", :using => CurlDownloadStrategy
-    sha256 "43c8c03353343c47bb67f90b7859fca9a634e82e049530328b4a0d8ce609c9c8"
+    url "https://download.elastic.co/downloads/ecctl/1.14.1/ecctl_1.14.1_linux_amd64.tar.gz", :using => CurlDownloadStrategy
+    sha256 "469dc36fb06c8d52926a41f6ee2ab8eb71424d70ef1a16b1cb87852f313dd807"
   end
 
   def install
