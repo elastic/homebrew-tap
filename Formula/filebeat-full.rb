@@ -24,23 +24,11 @@ class FilebeatFull < Formula
     EOS
   end
 
-  plist_options :manual => "filebeat"
-
-  def plist; <<~EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
-    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>Program</key>
-        <string>#{opt_bin}/filebeat</string>
-        <key>RunAtLoad</key>
-        <true/>
-      </dict>
-    </plist>
-  EOS
+  # Defining macOS service
+  # See https://docs.brew.sh/Formula-Cookbook#service-files
+  service do
+    run [opt_bin/"filebeat"]
+    keep_alive true
   end
 
   test do
