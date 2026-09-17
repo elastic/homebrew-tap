@@ -1,1 +1,10 @@
 .ci/output
+
+# Generic environment/credential files.
+.env
+.env.*
+*.pem
+*.key
+
+# Hermit runtime cache (tracked launchers in bin/ stay committed).
+.hermit

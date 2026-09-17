@@ -1,0 +1,10 @@
+repos:
+  - repo: https://github.com/elastic/gitleaks-hooks
+    rev: v1.0.0
+    hooks:
+      - id: gitleaks
+        args:
+          - --repository
+          - elastic/homebrew-tap
+          - --gitleaks-bin
+          - ./bin/gitleaks
