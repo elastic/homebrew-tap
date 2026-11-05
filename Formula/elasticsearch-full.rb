@@ -66,7 +66,7 @@ class ElasticsearchFull < Formula
   end
 
   service do
-    run [opt_bin/"elasticsearch"]
+    run opt_bin/"elasticsearch"
     working_dir var
     log_path var/"log/elasticsearch.log"
     error_log_path var/"log/elasticsearch.log"
