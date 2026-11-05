@@ -22,7 +22,7 @@ class LogstashFull < Formula
 
     # Move config files into etc
     (etc/"logstash").install Dir[libexec/"config/*"]
-    (libexec/"config").rmtree
+    FileUtils.rm_r(libexec/"config")
 
     bin.install libexec/"bin/logstash", libexec/"bin/logstash-plugin"
     bin.env_script_all_files(libexec/"bin", {})
