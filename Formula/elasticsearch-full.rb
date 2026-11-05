@@ -32,7 +32,9 @@ class ElasticsearchFull < Formula
 
     # Move config files into etc
     (etc/"elasticsearch").install Dir[libexec/"config/*"]
-    (libexec/"config").rmtree
+
+    require 'fileutils'
+    FileUtils.remove_dir (libexec/"config")
 
     Dir.foreach(libexec/"bin") do |f|
       next if f == "." || f == ".." || !File.extname(f).empty?
